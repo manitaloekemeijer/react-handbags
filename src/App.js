@@ -8,6 +8,7 @@ import bag4 from "./assets/bag_4.png";
 import Product from "./components/Product";
 import brand from "./assets/brand.png";
 import ourStory from "./assets/our_story.png";
+import Tile from "./components/Tile";
 
 function App() {
     return (
@@ -15,15 +16,15 @@ function App() {
             <h1>Handbags & Purses</h1>
             <nav>
                 <Button buttonName="to the collection"
-                        buttonDisabled="false"
+                        buttonDisabled={false}
                         clickButton={() => console.log("to the collection")}>
                 </Button>
                 <Button buttonName="shop all bags"
-                        buttonDisabled="false"
+                        buttonDisabled={false}
                         clickButton={() => console.log("shop all bags")}>
                 </Button>
                 <Button buttonName="pre-orders"
-                        buttonDisabled="true"
+                        buttonDisabled={true}
                         clickButton={() => console.log("pre-orders")}>
                 </Button>
             </nav>
@@ -54,16 +55,23 @@ function App() {
                 />
             </main>
             <footer>
-                <section>
-                    <h2>the Brand</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi enim eveniet fugiat ipsum laudantium magni neque perspiciatis quam saepe. Ad aliquam aut cumque facere harum illo neque possimus similique voluptas.</p>
-                </section>
-                <section><img src={brand} alt="brand"/></section>
-                <section><img src={ourStory} alt="ourStory"/></section>
-                <section>
-                    <h2>our story</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi enim ex excepturi impedit ipsam natus nobis quam sit vitae? Accusamus commodi cumque, dolore ducimus fuga iusto recusandae rerum voluptatum.</p>
-                </section>
+                <Tile titleText="The brand">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi enim eveniet fugiat ipsum
+                        laudantium magni neque perspiciatis quam saepe. Ad aliquam aut cumque facere harum illo neque
+                        possimus similique voluptas.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi enim eveniet fugiat ipsum
+                        laudantium magni neque perspiciatis quam saepe. Ad aliquam aut cumque facere harum illo neque
+                        possimus similique voluptas.</p>
+                </Tile>
+                <Tile imgName={brand}
+                      altName="brand"/>
+                <Tile imgName={ourStory}
+                      altName="ourStory"/>
+                <Tile titleText="ourStory">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi enim eveniet fugiat ipsum
+                        laudantium magni neque perspiciatis quam saepe. Ad aliquam aut cumque facere harum illo neque
+                        possimus similique voluptas.</p>
+                </Tile>
             </footer>
         </>
     );
