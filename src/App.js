@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
 import Button from "./components/Button";
-import bag1 from "./assets/bag_1.png"
-import bag2 from "./assets/bag_2.png"
-import bag3 from "./assets/bag_3.png"
-import bag4 from "./assets/bag_4.png"
+import bag1 from "./assets/bag_1.png";
+import bag2 from "./assets/bag_2.png";
+import bag3 from "./assets/bag_3.png";
+import bag4 from "./assets/bag_4.png";
+import Product from "./components/Product";
+import brand from "./assets/brand.png";
+import ourStory from "./assets/our_story.png";
 
 function App() {
     return (
@@ -25,36 +28,43 @@ function App() {
                 </Button>
             </nav>
             <main>
-                <article>
-                    <span>"Best seller"</span>
-                    <img src={bag1} alt="bag1"/>
-                    <p>"The handy bag"</p>
-                    <h4>"€400,-"</h4>
-                </article>
-                <article>
-                    <span>Best seller</span>
-                    <img src={bag2} alt="bag2"/>
-                    <p>The stylish bag</p>
-                    <h4>€250,-</h4>
-                </article>
-                <article>
-                    <span>New collection</span>
-                    <img src={bag3} alt="bag3"/>
-                    <p>The simple bag</p>
-                    <h4>€300,-</h4>
-                </article>
-                <article>
-                    <span>New collection</span>
-                    <img src={bag4} alt="bag4"/>
-                    <p>The trendy bag</p>
-                    <h4>€150,-</h4>
-                </article>
+                <Product
+                    labelBag="Best seller"
+                    imgBag={bag1}
+                    nameBag="The handy bag"
+                    priceBag="€400,-"
+                />
+                <Product
+                    labelBag="Best seller"
+                    imgBag={bag2}
+                    nameBag="The stylish bag"
+                    priceBag="€200,-"
+                />
+                <Product
+                    labelBag="New collection"
+                    imgBag={bag3}
+                    nameBag="The simple bag"
+                    priceBag="€300,-"
+                />
+                <Product
+                    labelBag="New collection"
+                    imgBag={bag4}
+                    nameBag="The trendy bag"
+                    priceBag="€150,-"
+                />
             </main>
-            {/*<nav id="navigationbar">*/}
-            {/*<button onClick={() => console.log("to the collection")}>to the collection</button>*/}
-            {/*<button onClick={() => console.log("shop all bags")}>shop all bags</button>*/}
-            {/*<button onClick={() => console.log("pre-orders")}>pre orders</button>*/}
-            {/*</nav>*/}
+            <footer>
+                <section>
+                    <h2>the Brand</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi enim eveniet fugiat ipsum laudantium magni neque perspiciatis quam saepe. Ad aliquam aut cumque facere harum illo neque possimus similique voluptas.</p>
+                </section>
+                <section><img src={brand} alt="brand"/></section>
+                <section><img src={ourStory} alt="ourStory"/></section>
+                <section>
+                    <h2>our story</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi enim ex excepturi impedit ipsam natus nobis quam sit vitae? Accusamus commodi cumque, dolore ducimus fuga iusto recusandae rerum voluptatum.</p>
+                </section>
+            </footer>
         </>
     );
 }
